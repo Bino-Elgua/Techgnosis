@@ -1,0 +1,14 @@
+// Full Ritual Example - Ọ̀ṢỌ́ Language
+// Bínò ÈL Guà — Crown Architect
+
+@impact(ase=5.0) {
+}
+
+@tithe(rate=0.0369) {
+}
+
+@merkleRoot(hash="0xabcdef1234567890") {
+}
+
+@sabbath() {
+}
