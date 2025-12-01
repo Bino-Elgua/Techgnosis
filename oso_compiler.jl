@@ -41,7 +41,8 @@ const OPCODE_MAP = Dict(
     :biponSeed => 0x26,
     :tithe => 0x27,
     :sabbath => 0x28,
-    :nonreentrant => 0x29
+    :nonreentrant => 0x29,
+    :genesisFlawToken => 0x2a
 )
 
 struct Instruction
@@ -132,13 +133,16 @@ end
 
 # ===== IR EMITTER =====
 
-function emit_ir(ast::AST)::Vector{Instruction}
+function emit_ir(ast::AST, block_number::Int=0)::Vector{Instruction}
     instructions = Instruction[]
     
     for ritual in ast.rituals
         for attr in ritual.attributes
             opcode = get(OPCODE_MAP, attr.type, 0x00)
-            push!(instructions, Instruction(opcode, attr.args))
+            # Pass block_number to instructions
+            args = copy(attr.args)
+            args[:block_number] = block_number
+            push!(instructions, Instruction(opcode, args))
         end
     end
     
@@ -147,10 +151,10 @@ end
 
 # ===== PUBLIC API =====
 
-function compile(source::String)::String
+function compile(source::String, block_number::Int=0)::String
     ast = parse_oso(source)
     validate_ast(ast)
-    ir = emit_ir(ast)
+    ir = emit_ir(ast, block_number)
     
     # Serialize to JSON
     ir_json = JSON3.write([
