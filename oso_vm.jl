@@ -1,4 +1,4 @@
-# oso_vm.jl — OSO VM Dispatcher (v1.0)
+# techgnosis_vm.jl — OSO VM Dispatcher (v1.0)
 
 module OsoVM
 
@@ -31,7 +31,7 @@ end
 function dispatch_opcode(opcode::UInt8, args::Dict)::Dict
     if opcode == 0x11  # IMPACT
         ase = get(args, :ase, 1.0)
-        net_ase = JuliaFFI.oso_impact_mint(ase)
+        net_ase = JuliaFFI.techgnosis_impact_mint(ase)
         return Dict("opcode" => "IMPACT", "ase_minted" => net_ase)
         
     elseif opcode == 0x27  # TITHE

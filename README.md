@@ -1,4 +1,4 @@
-# Ọ̀ṢỌ́ (OSO) Coding Language
+# ŦΞçħǤnØŞîš (OSO) Coding Language
 
 **Àṣẹ! 🔥**
 
@@ -10,7 +10,7 @@
 
 ## Overview
 
-Ọ̀ṢỌ́ is a spiritual coding language that weaves Yoruba cosmology with modern blockchain and AI systems. It compiles to multi-language IR, dispatching to:
+ŦΞçħǤnØŞîš is a spiritual coding language that weaves Yoruba cosmology with modern blockchain and AI systems. It compiles to multi-language IR, dispatching to:
 
 - **Julia** for mathematical divination (VeilSim, PID controllers)
 - **Rust** for safety guards (non-reentrancy, circuit breakers)
@@ -148,16 +148,16 @@ oso-lang/
 ├── test/              # Test suite
 │   └── oso_vm_test.jl
 ├── examples/          # Example OSO files
-│   ├── impact.oso
-│   ├── tithe.oso
-│   └── full_ritual.oso
+│   ├── impact.tech
+│   ├── tithe.tech
+│   └── full_ritual.tech
 ├── build.sh           # Build script
 └── README.md
 ```
 
 ## The Quadrinity
 
-1. **Ọ̀ṢỌ́VM** - Government & monetary policy
+1. **ŦΞçħǤnØŞîšVM** - Government & monetary policy
 2. **AIO** - Universal work economy (3.69% tithe)
 3. **TechGnØŞ.EXE** - Spiritual church (50/25/15/10 split)
 4. **SimaaS** - Simulation hospital (VeilSim F1 > 0.9 → 5 Àṣẹ)

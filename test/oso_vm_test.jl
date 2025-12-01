@@ -1,9 +1,9 @@
-# test/oso_vm_test.jl — OSO VM Tests
+# test/techgnosis_vm_test.jl — OSO VM Tests
 
 using Test
 
-include("../oso_compiler.jl")
-include("../oso_vm.jl")
+include("../techgnosis_compiler.jl")
+include("../techgnosis_vm.jl")
 
 using .OsoCompiler
 using .OsoVM

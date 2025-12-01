@@ -1,4 +1,4 @@
-# oso_compiler.jl — OSO to IR Compiler (v1.0)
+# techgnosis_compiler.jl — OSO to IR Compiler (v1.0)
 # Bínò ÈL Guà — Crown Architect
 # Ọbàtálá — Master Auditor
 
