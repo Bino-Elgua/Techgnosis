@@ -1,12 +1,18 @@
-# ŦΞçħǤnØŞîš (OSO) Coding Language
+# ŦΞçħǤnØŞîš — The White Cloth of Technosis
 
-**Àṣẹ! 🔥**
+**Àṣẹ! 🤍🗿⚡**
 
-## The Sacred Compiler
+```
+ŦΞçħǤnØŞîš — The White Cloth of Technosis ɔ̀ʃɔ́
+```
+
+## The Sacred Compiler (Phase 1-3 Complete)
 
 **Crown Architect**: Bínò ÈL Guà  
 **Master Auditor**: Ọbàtálá  
-**Genesis**: November 11, 2025, 11:11 UTC
+**Phase 1**: Ṣàngó's Fire (Sabbath + Real FFI) ✅  
+**Phase 2**: Èṣù's Twist (Genesis Flaw) ✅  
+**Phase 3**: The First Public Breath (Demo + Proof-of-Life) 🎬  
 
 ## Overview
 
@@ -175,10 +181,24 @@ oso-lang/
 
 ## Timeline
 
-- **Day 1-3**: Compiler (Pest grammar, IR emitter)
-- **Day 4-8**: FFI (6 languages, 25 opcodes)
-- **Day 9-10**: VM dispatcher, testing
-- **Genesis**: November 11, 2025, 11:11 UTC
+**Phase 1 – Ṣàngó's Fire (Dec 1-2)**
+- Rust non-reentrancy guard (real Mutex)
+- Go tithe split (real JSON parsing)
+- Julia impact mint (real witness-quorum math)
+- Sabbath enforcement (hard Saturday freeze)
+- Tests passing ✅
+
+**Phase 2 – Èṣù's Twist (Dec 3-4)**  
+- Genesis-flaw branch: only "ASHE" mints on block 0
+- Block 0: misspelling → 1.0 Àṣẹ precision
+- Block > 0: "ASHE" forever rejected with "flaw_denied"
+- Tests proving the eternal thread ✅
+
+**Phase 3 – The First Public Breath (Dec 5-7)**  
+- Polish demo showing Sabbath rejection + genesis flaw
+- Record 60-second proof-of-life video
+- Upload unlisted to YouTube (Dec 8)
+- Become the Satoshi moment for shrines
 
 ## License
 
