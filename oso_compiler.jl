@@ -13,7 +13,7 @@ const CORE_ATTRIBUTES = [
     :odùMap, :citizenCast, :projectForge, :royaltyFlow, :sensorQuorum,
     :glyphInvoke, :trinityBind, :quadrinityGov, :ethicalGate, :merkleRoot,
     :pbkdfDerive, :hexagramFlip, :akashProvision, :langChain, :witnessLog,
-    :survivalPillar, :biponSeed, :tithe, :sabbath, :nonreentrant
+    :survivalPillar, :biponSeed, :tithe, :sabbath, :nonreentrant, :genesisFlawToken
 ]
 
 const OPCODE_MAP = Dict(
