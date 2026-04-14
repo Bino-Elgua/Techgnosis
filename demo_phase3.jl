@@ -23,7 +23,7 @@ println("="^80 * "\n")
 
 # ========== Demo 1: Real Witness-Quorum Minting ==========
 println("DEMO 1: Real Witness-Quorum Minting (Julia Impact)")
-println("-" * 80)
+println("-"^80)
 
 source1 = """
 @impact(ase=5.0) {
@@ -46,7 +46,7 @@ println("  Tithe Rate: ", results1[1]["tithe_rate"])
 # ========== Demo 2: Real Tithe Splitting ==========
 println("\n" * "="^80)
 println("DEMO 2: Real Tithe Splitting (Go FFI)")
-println("-" * 80)
+println("-"^80)
 
 source2 = """
 @tithe(amount=100.0) {
@@ -71,7 +71,7 @@ end
 # ========== Demo 3: Sabbath Enforcement ==========
 println("\n" * "="^80)
 println("DEMO 3: Sabbath Enforcement (Saturday UTC Freeze)")
-println("-" * 80)
+println("-"^80)
 
 now = Dates.now(Dates.UTC)
 is_saturday = Dates.dayofweek(now) == 6
@@ -103,7 +103,7 @@ end
 # ========== Demo 4: Genesis Flaw (Block 0) ==========
 println("\n" * "="^80)
 println("DEMO 4: Genesis Flaw (Èṣù's Twist) — Block 0: ASHE Mints")
-println("-" * 80)
+println("-"^80)
 
 source4 = """
 @genesisFlawToken(token="ASHE", amount=1.0) {
@@ -129,7 +129,7 @@ println("  Transformation: ", results4[1]["transformation"])
 # ========== Demo 5: Genesis Flaw (Block > 0) ==========
 println("\n" * "="^80)
 println("DEMO 5: Genesis Flaw (Èṣù's Twist) — Block 1: ASHE Rejected")
-println("-" * 80)
+println("-"^80)
 
 source5 = """
 @genesisFlawToken(token="ASHE", amount=1.0) {
