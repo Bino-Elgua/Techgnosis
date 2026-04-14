@@ -50,8 +50,9 @@ struct Instruction
     args::Dict{Symbol, Any}
 end
 
-struct AST
-    rituals::Vector{Ritual}
+struct Attribute
+    type::Symbol
+    args::Dict{Symbol, Any}
 end
 
 struct Ritual
@@ -59,9 +60,8 @@ struct Ritual
     attributes::Vector{Attribute}
 end
 
-struct Attribute
-    type::Symbol
-    args::Dict{Symbol, Any}
+struct AST
+    rituals::Vector{Ritual}
 end
 
 # ===== PARSER =====
