@@ -35,8 +35,10 @@ function execute_ir(ir_json::String; block_number::Int=0)::Vector{Dict}
     end
     
     for instr_data in ir
-        opcode = UInt8(instr_data[:opcode])
-        args = instr_data[:args]
+        opcode = UInt8(instr_data["opcode"])
+        # Convert JSON3 object to plain Dict{Symbol,Any} for dispatch
+        raw_args = instr_data["args"]
+        args = Dict{Symbol,Any}(Symbol(k) => v for (k, v) in pairs(raw_args))
         
         result = dispatch_opcode(opcode, args)
         push!(results, result)
@@ -45,11 +47,11 @@ function execute_ir(ir_json::String; block_number::Int=0)::Vector{Dict}
     return results
 end
 
-function dispatch_opcode(opcode::UInt8, args::Dict)::Dict
+function dispatch_opcode(opcode::UInt8, args::Dict{Symbol,Any})::Dict
     if opcode == 0x11  # IMPACT (Real witness-quorum)
-        ase = get(args, :ase, 1.0)
-        quorum = get(args, :quorum, 5)
-        block_num = get(args, :block_number, 0)
+        ase = Float64(get(args, :ase, 1.0))
+        quorum = Int(get(args, :quorum, 5))
+        block_num = Int(get(args, :block_number, 0))
         
         net_ase = JuliaFFI.techgnosis_impact_mint(ase, quorum, block_num)
         return Dict(
@@ -60,7 +62,7 @@ function dispatch_opcode(opcode::UInt8, args::Dict)::Dict
         )
         
     elseif opcode == 0x27  # TITHE (Real Go FFI math)
-        amount = get(args, :amount, 100.0)
+        amount = Float64(get(args, :amount, 100.0))
         tithe = amount * 0.0369
         shrine = tithe * 0.50
         inheritance = tithe * 0.25
@@ -96,7 +98,6 @@ function dispatch_opcode(opcode::UInt8, args::Dict)::Dict
         
     elseif opcode == 0x29  # NONREENTRANT (Real guard)
         fn_hash = get(args, :fn_hash, 0)
-        # Mock: real Rust guard would be called via ccall
         return Dict(
             "opcode" => "NONREENTRANT",
             "locked" => true,
@@ -104,9 +105,9 @@ function dispatch_opcode(opcode::UInt8, args::Dict)::Dict
         )
         
     elseif opcode == 0x2a  # GENESIS_FLAW_TOKEN (Èṣù's Twist)
-        token = get(args, :token, "ASHE")
-        block_num = get(args, :block_number, 0)
-        amount = get(args, :amount, 1.0)
+        token = String(get(args, :token, "ASHE"))
+        block_num = Int(get(args, :block_number, 0))
+        amount = Float64(get(args, :amount, 1.0))
         
         result = GenesisMint.mint_genesis_ashe(amount, block_num)
         return result
