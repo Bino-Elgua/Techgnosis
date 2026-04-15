@@ -133,7 +133,7 @@ end
 
 # ===== IR EMITTER =====
 
-function emit_ir(ast::AST, block_number::Int=0)::Vector{Instruction}
+function emit_ir(ast::AST; block_number::Int=0)::Vector{Instruction}
     instructions = Instruction[]
     
     for ritual in ast.rituals
@@ -151,10 +151,10 @@ end
 
 # ===== PUBLIC API =====
 
-function compile(source::String, block_number::Int=0)::String
+function compile(source::String; block_number::Int=0)::String
     ast = parse_oso(source)
     validate_ast(ast)
-    ir = emit_ir(ast, block_number)
+    ir = emit_ir(ast; block_number=block_number)
     
     # Serialize to JSON
     ir_json = JSON3.write([

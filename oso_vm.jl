@@ -24,7 +24,7 @@ end
 # Global execution context
 const EXEC_CONTEXT = ExecutionContext(0, false, false)
 
-function execute_ir(ir_json::String, block_number::Int=0)::Vector{Dict}
+function execute_ir(ir_json::String; block_number::Int=0)::Vector{Dict}
     EXEC_CONTEXT.block_number = block_number
     ir = JSON3.read(ir_json)
     results = Dict[]
