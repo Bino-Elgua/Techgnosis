@@ -89,7 +89,7 @@ function parse_oso(source::String)::AST
     return AST(rituals)
 end
 
-function parse_args(args_str::String)::Dict{Symbol, Any}
+function parse_args(args_str::AbstractString)::Dict{Symbol, Any}
     args = Dict{Symbol, Any}()
     
     if isempty(strip(args_str))
