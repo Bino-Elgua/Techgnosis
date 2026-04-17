@@ -13,7 +13,8 @@ const CORE_ATTRIBUTES = [
     :odùMap, :citizenCast, :projectForge, :royaltyFlow, :sensorQuorum,
     :glyphInvoke, :trinityBind, :quadrinityGov, :ethicalGate, :merkleRoot,
     :pbkdfDerive, :hexagramFlip, :akashProvision, :langChain, :witnessLog,
-    :survivalPillar, :biponSeed, :tithe, :sabbath, :nonreentrant, :genesisFlawToken
+    :survivalPillar, :biponSeed, :tithe, :sabbath, :nonreentrant, :genesisFlawToken,
+    :veil
 ]
 
 const OPCODE_MAP = Dict(
@@ -42,7 +43,8 @@ const OPCODE_MAP = Dict(
     :tithe => 0x27,
     :sabbath => 0x28,
     :nonreentrant => 0x29,
-    :genesisFlawToken => 0x2a
+    :genesisFlawToken => 0x2a,
+    :veil => 0x2b
 )
 
 struct Instruction
